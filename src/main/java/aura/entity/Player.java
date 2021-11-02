@@ -35,11 +35,13 @@ public class Player {
             @Override
             protected void onActionBegin() {
                 isWalking = true;
+                System.out.println("Right Start");
             }
 
             @Override
             protected void onActionEnd() {
                 isWalking = false;
+                System.out.println("Right Stop");
             }
         }, KeyCode.RIGHT);
     }
