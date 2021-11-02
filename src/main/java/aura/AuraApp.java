@@ -14,8 +14,8 @@ public class AuraApp extends GameApplication {
     @Override
     protected void initSettings(GameSettings settings) {
         // launches GUI for game and adds width, height and title
-        settings.setWidth(1920);
-        settings.setHeight(1080);
+        settings.setWidth(854);
+        settings.setHeight(480);
         settings.setTitle("Aura");
         settings.setVersion("");
     }
