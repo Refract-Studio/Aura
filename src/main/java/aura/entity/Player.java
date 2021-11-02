@@ -5,7 +5,7 @@ import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import javafx.scene.input.KeyCode;
 
-public class Player {
+public class Player implements Entity {
     private int moveSpeed;
     private boolean isColliding;
     private int stamina;
@@ -14,7 +14,7 @@ public class Player {
     private Class<? extends EntityCollidable> collidingWith;
     private float x, y;
     private int blueberries;
-
+    @Override
     public void onUpdate() {
         x += motionX;
         y += motionY;
