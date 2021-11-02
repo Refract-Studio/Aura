@@ -1,6 +1,11 @@
 package aura.entity;
 
-class Player {
+import com.almasb.fxgl.dsl.FXGL;
+import com.almasb.fxgl.input.Input;
+import com.almasb.fxgl.input.UserAction;
+import javafx.scene.input.KeyCode;
+
+public class Player {
     private int moveSpeed;
     private boolean isColliding;
     private int stamina;
@@ -12,21 +17,33 @@ class Player {
     private int blueberries;
     public void onUpdate(){
         if(isClimbing){
-            y += 5;
+            y += moveSpeed;
         }
         if(isWalking && !isRunning){
-            x += 2.5f;
+            x += moveSpeed;
         }else if(isRunning && !isWalking){
-            x += 5f;
+            x += moveSpeed*2;
         }
     }
     public void onRender(){
 
     }
-    public void onKeypress(){
+    public void initKeypress(){
+        Input input = FXGL.getInput();
 
+        input.addAction(new UserAction("Forward"){
+            @Override
+            protected void onActionBegin() {
+                isWalking = true;
+            }
+
+            @Override
+            protected void onActionEnd() {
+                isWalking = false;
+            }
+        }, KeyCode.RIGHT);
     }
-    public void onMouseclick(){
+    public void initMouseclick(){
 
     }
 }
