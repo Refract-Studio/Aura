@@ -14,7 +14,7 @@ public class AuraApp extends GameApplication {
     // things todo:
     // LevelUtils.loadLevel(player.currentLevel);
     // make UI
-    Player thePlayer = new Player();
+    Player player = new Player();
 
 
     @Override

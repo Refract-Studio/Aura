@@ -14,17 +14,20 @@ public class Player {
     private Class<? extends EntityCollidable> collidingWith;
     private float x, y;
     private int blueberries;
-    public void onUpdate(){
+
+    public void onUpdate() {
         x += motionX;
         y += motionY;
     }
-    public void onRender(){
+
+    public void onRender() {
 
     }
-    public void initKeypress(){
+
+    public void initKeypress() {
         Input input = FXGL.getInput();
 
-        input.addAction(new UserAction("Forward"){
+        input.addAction(new UserAction("Forward") {
             @Override
             protected void onActionBegin() {
                 motionX = moveSpeed;
@@ -35,7 +38,8 @@ public class Player {
                 motionX = 0;
             }
         }, KeyCode.RIGHT);
-        input.addAction(new UserAction("Backward"){
+
+        input.addAction(new UserAction("Backward") {
             @Override
             protected void onActionBegin() {
                 motionY = -moveSpeed;
@@ -47,7 +51,7 @@ public class Player {
             }
         }, KeyCode.LEFT);
     }
-    public void initMouseclick(){
+    public void initMouseClick() {
 
     }
 }

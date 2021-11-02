@@ -19,6 +19,11 @@
             <artifactId>fxgl</artifactId>
             <version>11.17</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.almasb</groupId>
+            <artifactId>fxgl-entity</artifactId>
+            <version>11.17</version>
+        </dependency>
     </dependencies>
 
 </project>

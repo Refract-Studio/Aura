@@ -16,7 +16,7 @@ public class EntityCloud extends EntityCollidable {
     int x, y;
     ID id = new ID("cloud", 1);
     MoveDirection md;
-    BufferedImage sprite = ImageIO.read(Objects.requireNonNull(getClass().getResource("/resources/cloud.svg")));
+    BufferedImage sprite = ImageIO.read(Objects.requireNonNull(getClass().getResource("/resources/textures/entity-cloud.png")));
     Class cloud;
 
     public EntityCloud(int x, int y, MoveDirection md) throws IOException {
