@@ -9,21 +9,14 @@ public class Player {
     private int moveSpeed;
     private boolean isColliding;
     private int stamina;
-    private boolean isClimbing;
-    private boolean isWalking;
-    private boolean isRunning;
+    private float motionX;
+    private float motionY;
     private Class<? extends EntityCollidable> collidingWith;
     private float x, y;
     private int blueberries;
     public void onUpdate(){
-        if(isClimbing){
-            y += moveSpeed;
-        }
-        if(isWalking && !isRunning){
-            x += moveSpeed;
-        }else if(isRunning && !isWalking){
-            x += moveSpeed*2;
-        }
+        x += motionX;
+        y += motionY;
     }
     public void onRender(){
 
@@ -34,16 +27,25 @@ public class Player {
         input.addAction(new UserAction("Forward"){
             @Override
             protected void onActionBegin() {
-                isWalking = true;
-                System.out.println("Right Start");
+                motionX = moveSpeed;
             }
 
             @Override
             protected void onActionEnd() {
-                isWalking = false;
-                System.out.println("Right Stop");
+                motionX = 0;
             }
         }, KeyCode.RIGHT);
+        input.addAction(new UserAction("Backward"){
+            @Override
+            protected void onActionBegin() {
+                motionY = -moveSpeed;
+            }
+
+            @Override
+            protected void onActionEnd() {
+                motionY = 0;
+            }
+        }, KeyCode.LEFT);
     }
     public void initMouseclick(){
 
