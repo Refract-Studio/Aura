@@ -4,10 +4,11 @@ import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseButton;
 
 import java.util.ArrayList;
 
-public class Player implements Entity {
+public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
     // speed of movement
     private int moveSpeed;
     // is colliding
@@ -15,8 +16,8 @@ public class Player implements Entity {
     // stamina for climbing
     private int stamina;
     // motion{x, y}, @author SethTheDev
-    public float motionX;
-    public float motionY;
+    //public float motionX;
+    //public float motionY;
     // entity that it is colliding with
     private ArrayList<Entity> collidingWith; //We need a list of entities if multiple entities are collided
     // x, y position
@@ -27,14 +28,20 @@ public class Player implements Entity {
     private int strawberries;
 
     // runs every tick
-    @Override
-    public void onUpdate() {
-        x += motionX;
-        y += motionY;
+
+    public Player(){
+        this.moveSpeed = 5;
+        this.isColliding = false;
+        this.stamina = 9;
+        this.collidingWith = new ArrayList<Entity>();
+        this.x = 1920/2;
+        this.y = 1080/2;
+        this.blueberries = 0;
+        this.strawberries = 0;
     }
 
-    public void onRender() {
-
+    @Override
+    public void onUpdate() {
     }
 
     // initialises input
@@ -42,39 +49,31 @@ public class Player implements Entity {
         // get input
         Input input = FXGL.getInput();
 
-        // adds forward action
         input.addAction(new UserAction("Forward") {
-            // when action begins
             @Override
-            protected void onActionBegin() {
-                motionX = moveSpeed;
+            protected void onAction() {
+                translateX(moveSpeed);
+                System.out.println(moveSpeed);
             }
+        }, KeyCode.A);
 
-            // when action ends
-            @Override
-            protected void onActionEnd() {
-                motionX = 0;
-            }
-        }, KeyCode.RIGHT); // uses keycode right
-
-        // adds backward action
         input.addAction(new UserAction("Backward") {
-            // when action begins
             @Override
             protected void onActionBegin() {
-                motionY = -moveSpeed;
+                translateX(-moveSpeed);
+                System.out.println(-moveSpeed);
             }
-
-            // when action ends
-            @Override
-            protected void onActionEnd() {
-                motionY = 0;
-            }
-        }, KeyCode.LEFT); // uses keycode left
+        }, KeyCode.D);
     }
 
-    // todo @seththedev what is this?
     public void initMouseClick() {
-        //This code is where we register mouse click's!
+        Input input = FXGL.getInput();
+
+        input.addAction(new UserAction("Click") {
+            @Override
+            protected void onActionEnd() {
+                System.out.println("MOUSE CLICK");
+            }
+        }, MouseButton.PRIMARY);
     }
 }

@@ -13,8 +13,7 @@ import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-import static com.almasb.fxgl.dsl.FXGLForKtKt.entityBuilder;
-import static com.almasb.fxgl.dsl.FXGLForKtKt.getGameScene;
+import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class AuraApp extends GameApplication {
     // main class for game, handles app and GUI
@@ -24,6 +23,7 @@ public class AuraApp extends GameApplication {
     // make UI
     ArrayList<Entity> entities = new ArrayList<Entity>();
     Player player = new Player();
+    com.almasb.fxgl.entity.Entity player1 = player;
 
     protected void initEntities() {
         entities.add(player);
@@ -71,7 +71,7 @@ public class AuraApp extends GameApplication {
 
     @Override
     protected void initGame() {
-        spawnPlayer(1920/2, 1080/2);
+        player1 = spawnPlayer(getAppWidth()/2, getAppHeight()/2);
     }
 
     Runnable hookRunnable = () -> {
@@ -81,7 +81,7 @@ public class AuraApp extends GameApplication {
     };
 
     public com.almasb.fxgl.entity.Entity spawnPlayer(double posX, double posY){
-        return entityBuilder().at(posX, posY).viewWithBBox(new Rectangle(20, 20)).with("velocity", new Point2D(player.motionX, player.motionY)).buildAndAttach();
+        return entityBuilder().at(posX, posY).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
     }
 
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
