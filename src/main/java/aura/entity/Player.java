@@ -5,6 +5,8 @@ import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import javafx.scene.input.KeyCode;
 
+import java.util.ArrayList;
+
 public class Player implements Entity {
     // speed of movement
     private int moveSpeed;
@@ -16,7 +18,7 @@ public class Player implements Entity {
     public float motionX;
     public float motionY;
     // entity that it is colliding with
-    private Entity collidingWith;
+    private ArrayList<Entity> collidingWith; //We need a list of entities if multiple entities are collided
     // x, y position
     private float x, y;
     // blueberries
