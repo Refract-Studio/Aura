@@ -13,8 +13,8 @@ public class Player implements Entity {
     // stamina for climbing
     private int stamina;
     // motion{x, y}, @author SethTheDev
-    private float motionX;
-    private float motionY;
+    public float motionX;
+    public float motionY;
     // entity that it is colliding with
     private Entity collidingWith;
     // x, y position

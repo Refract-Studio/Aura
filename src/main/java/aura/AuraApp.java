@@ -2,17 +2,18 @@ package aura;
 
 import aura.entity.Entity;
 import aura.entity.Player;
-import com.almasb.fxgl.app.CursorInfo;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
-import javafx.beans.property.StringProperty;
+import javafx.geometry.Point2D;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import java.util.Map;
+
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
+import static com.almasb.fxgl.dsl.FXGLForKtKt.entityBuilder;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.getGameScene;
 
 public class AuraApp extends GameApplication {
@@ -68,11 +69,20 @@ public class AuraApp extends GameApplication {
         player.initMouseClick();
     }
 
+    @Override
+    protected void initGame() {
+        spawnPlayer(1920/2, 1080/2);
+    }
+
     Runnable hookRunnable = () -> {
         for (Entity e : entities) {
             e.onUpdate();
         }
     };
+
+    public com.almasb.fxgl.entity.Entity spawnPlayer(double posX, double posY){
+        return entityBuilder().at(posX, posY).viewWithBBox(new Rectangle(20, 20)).with("velocity", new Point2D(player.motionX, player.motionY)).buildAndAttach();
+    }
 
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
     public static void main(String[] args) {
