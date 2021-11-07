@@ -73,6 +73,6 @@ public class Player implements Entity {
 
     // todo @seththedev what is this?
     public void initMouseClick() {
-
+        //This code is where we register mouse click's!
     }
 }
