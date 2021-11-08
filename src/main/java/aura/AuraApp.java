@@ -24,6 +24,9 @@ public class AuraApp extends GameApplication {
     ArrayList<Entity> entities = new ArrayList<Entity>();
     Player player = new Player();
     com.almasb.fxgl.entity.Entity player1 = player;
+    static int x = 1920/2;
+    static int y = 1080/2;
+
 
     protected void initEntities() {
         entities.add(player);
@@ -39,6 +42,21 @@ public class AuraApp extends GameApplication {
         hookRunnable.run(); //Cannot execute it as a thread to prevent concurrent modification!
     }
 
+    public static int getPlayerX() {
+        return x;
+    }
+
+    public static void setPlayerX(int toChange) {
+        x = toChange;
+    }
+
+    public int getPlayerY() {
+        return y;
+    }
+
+    public static void setPlayerY(int toChange) {
+        y = toChange;
+    }
     @Override
     protected void initSettings(GameSettings settings) {
         // launches GUI for game and adds width, height and title
@@ -66,12 +84,11 @@ public class AuraApp extends GameApplication {
     @Override
     protected void initInput() {
         player.initKeypress();
-        player.initMouseClick();
     }
 
     @Override
     protected void initGame() {
-        player1 = spawnPlayer(getAppWidth()/2, getAppHeight()/2);
+
     }
 
     Runnable hookRunnable = () -> {
@@ -80,9 +97,6 @@ public class AuraApp extends GameApplication {
         }
     };
 
-    public com.almasb.fxgl.entity.Entity spawnPlayer(double posX, double posY){
-        return entityBuilder().at(posX, posY).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
-    }
 
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
     public static void main(String[] args) {

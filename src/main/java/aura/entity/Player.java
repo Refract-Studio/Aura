@@ -1,11 +1,14 @@
 package aura.entity;
 
+import aura.AuraApp;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
+import javafx.scene.shape.Rectangle;
 
+import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 import java.util.ArrayList;
 
 public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
@@ -29,7 +32,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
 
     // runs every tick
 
-    public Player(){
+    public Player() {
         this.moveSpeed = 5;
         this.isColliding = false;
         this.stamina = 9;
@@ -42,6 +45,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
 
     @Override
     public void onUpdate() {
+        entityBuilder().at(x, y).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
     }
 
     // initialises input
@@ -53,6 +57,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
             @Override
             protected void onAction() {
                 translateX(moveSpeed);
+                x = x + moveSpeed;
                 System.out.println(moveSpeed);
             }
         }, KeyCode.A);
@@ -61,19 +66,9 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
             @Override
             protected void onActionBegin() {
                 translateX(-moveSpeed);
+                x = x - moveSpeed;
                 System.out.println(-moveSpeed);
             }
         }, KeyCode.D);
-    }
-
-    public void initMouseClick() {
-        Input input = FXGL.getInput();
-
-        input.addAction(new UserAction("Click") {
-            @Override
-            protected void onActionEnd() {
-                System.out.println("MOUSE CLICK");
-            }
-        }, MouseButton.PRIMARY);
     }
 }
