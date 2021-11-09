@@ -22,15 +22,17 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
     //public float motionX;
     //public float motionY;
     // entity that it is colliding with
-    private ArrayList<Entity> collidingWith; //We need a list of entities if multiple entities are collided
+    private ArrayList<Entity> collidingWith; // We need a list of entities if multiple entities are collided
     // x, y position
     private float x, y;
     // blueberries
     private int blueberries;
     // strawberries
     private int strawberries;
+    // controls physics
+    private Runnable physics;
 
-    // runs every tick
+
 
     public Player() {
         this.moveSpeed = 5;
@@ -45,6 +47,9 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
 
     @Override
     public void onUpdate() {
+        if (!isColliding) {
+            y += 2;
+        }
         entityBuilder().at(x, y).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
     }
 
@@ -56,7 +61,6 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
         input.addAction(new UserAction("Forward") {
             @Override
             protected void onAction() {
-                translateX(moveSpeed);
                 x = x + moveSpeed;
                 System.out.println(moveSpeed);
             }
@@ -65,10 +69,13 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
         input.addAction(new UserAction("Backward") {
             @Override
             protected void onActionBegin() {
-                translateX(-moveSpeed);
                 x = x - moveSpeed;
                 System.out.println(-moveSpeed);
             }
         }, KeyCode.A);
+    }
+
+    public void initPhysics() {
+
     }
 }

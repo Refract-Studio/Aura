@@ -84,6 +84,7 @@ public class AuraApp extends GameApplication {
     @Override
     protected void initInput() {
         player.initKeypress();
+        // boom stuff tm
     }
 
     @Override
