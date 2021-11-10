@@ -17,6 +17,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class AuraApp extends GameApplication {
+    //test
+
     // main class for game, handles app and GUI
 
     // things todo:
