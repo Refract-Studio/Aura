@@ -2,6 +2,8 @@ package aura;
 
 import aura.entity.Entity;
 import aura.entity.Player;
+import aura.ui.UIDrawable;
+import aura.ui.UIUtils;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.dsl.FXGL;
@@ -71,8 +73,9 @@ public class AuraApp extends GameApplication {
 
     @Override
     protected void initUI() {
-        com.almasb.fxgl.entity.Entity title = FXGL.entityBuilder().at(650, 260).view("comp-ts.png").buildAndAttach();
-        com.almasb.fxgl.entity.Entity play = FXGL.entityBuilder().at(650, 200).view("comp-play.png").buildAndAttach();
+        com.almasb.fxgl.entity.Entity e = FXGL.entityBuilder().at(0, 0).view(FXGL.getAssetLoader().loadTexture("COMPONENT_WALLPAPER.jpg", 1920, 1080)).buildAndAttach();
+        UIUtils.drawUIComponent(650, 200, UIDrawable.COMPONENT_PLAY);
+        UIUtils.drawUIComponent(650, 0, UIDrawable.COMPONENT_TITLE);
     }
 
     @Override
