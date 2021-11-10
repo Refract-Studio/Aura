@@ -5,3 +5,4 @@
 /target/
 Aura.iml
 target/*
+*.log

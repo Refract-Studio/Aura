@@ -61,7 +61,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
         input.addAction(new UserAction("Forward") {
             @Override
             protected void onAction() {
-                x = x + moveSpeed;
+                x += moveSpeed;
                 System.out.println(moveSpeed);
             }
         }, KeyCode.D);
@@ -69,7 +69,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
         input.addAction(new UserAction("Backward") {
             @Override
             protected void onActionBegin() {
-                x = x - moveSpeed;
+                x -= moveSpeed;
                 System.out.println(-moveSpeed);
             }
         }, KeyCode.A);
