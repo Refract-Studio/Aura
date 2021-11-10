@@ -4,6 +4,7 @@ import aura.entity.Entity;
 import aura.entity.Player;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
+import com.almasb.fxgl.dsl.FXGL;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -16,6 +17,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class AuraApp extends GameApplication {
+    //test
+
     // main class for game, handles app and GUI
 
     // things todo:
@@ -68,12 +71,8 @@ public class AuraApp extends GameApplication {
 
     @Override
     protected void initUI() {
-        Text text = new Text();
-        text.setTranslateX(960);
-        text.setTranslateY(580);
-        text.textProperty().setValue("Aura");
-
-        getGameScene().addUINode(text);
+        com.almasb.fxgl.entity.Entity title = FXGL.entityBuilder().at(650, 260).view("comp-ts.png").buildAndAttach();
+        com.almasb.fxgl.entity.Entity play = FXGL.entityBuilder().at(650, 200).view("comp-play.png").buildAndAttach();
     }
 
     @Override
