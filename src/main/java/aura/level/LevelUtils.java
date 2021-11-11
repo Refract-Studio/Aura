@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 
 public class LevelUtils {
-    public static Level currentLevel;
+    public static aura.level.Level currentLevel;
     public static void loadLevel(String name) throws Exception {
         File levelFile = new File("src/main/resources/levels/" + name + ".auralevel"); //Will only work when testing not when releasing so change later lmao
         if(levelFile.exists()){
@@ -29,7 +29,7 @@ public class LevelUtils {
                     }
                 }
             }
-            currentLevel = new Level(levelId, levelName, backgroundImage);
+            currentLevel = new aura.level.Level(levelId, levelName, backgroundImage);
         }else{
             System.err.println("[Error]: Unknown Level!");
         }
