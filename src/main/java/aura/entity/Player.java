@@ -85,6 +85,14 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
                 y += moveSpeed;
             }
         }, KeyCode.S);
+
+        input.addAction(new UserAction("Click") {
+            @Override
+            protected void onAction() {
+                x = (float) input.getMouseXUI();
+                y = (float) input.getMouseYUI();
+            }
+        }, MouseButton.PRIMARY);
     }
 
     public void initPhysics() {
