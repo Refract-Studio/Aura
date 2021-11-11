@@ -48,7 +48,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
     @Override
     public void onUpdate() {
         if (!isColliding) {
-            
+
         }
         entityBuilder().at(x, y).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
     }
@@ -62,17 +62,29 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
             @Override
             protected void onAction() {
                 x += moveSpeed;
-                System.out.println(moveSpeed);
             }
         }, KeyCode.D);
 
         input.addAction(new UserAction("Backward") {
             @Override
-            protected void onActionBegin() {
+            protected void onAction() {
                 x -= moveSpeed;
-                System.out.println(-moveSpeed);
             }
         }, KeyCode.A);
+
+        input.addAction(new UserAction("Up") {
+            @Override
+            protected void onAction() {
+                y -= moveSpeed;
+            }
+        }, KeyCode.W);
+
+        input.addAction(new UserAction("Down") {
+            @Override
+            protected void onAction() {
+                y += moveSpeed;
+            }
+        }, KeyCode.S);
     }
 
     public void initPhysics() {
