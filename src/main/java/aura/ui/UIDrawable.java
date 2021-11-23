@@ -1,6 +1,6 @@
 package aura.ui;
 
-public enum EntityDrawable { 
+public enum UIDrawable {
 
    COMPONENT_PLAY,
    COMPONENT_TITLE,
