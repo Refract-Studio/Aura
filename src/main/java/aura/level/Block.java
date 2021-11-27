@@ -1,6 +1,6 @@
 package aura.level;
 
-public enum Block {
+public enum Block {;
     public static final int STONE = 0;
     public static final int GRASS = 1;
     public static final int DIRT = 2;

@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="dont ask">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/level/LevelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/level/LevelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/ui/UIUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/ui/UIUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/textures/COMPONENT_PLAY.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/COMPONENT_PLAY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aura.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/level/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/level/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/level/LevelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/level/LevelUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
