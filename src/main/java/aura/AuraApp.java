@@ -92,12 +92,7 @@ public class AuraApp extends GameApplication {
 
     @Override
     protected void initGame() {
-        try {
-            LevelUtils.loadLevel("Discovery");
-            if(LevelUtils.currentLevel != null) System.out.println(LevelUtils.currentLevel.getName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // nothing yet
     }
 
     Runnable hookRunnable = () -> {
