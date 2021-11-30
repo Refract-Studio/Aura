@@ -94,8 +94,4 @@ public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity
             }
         }, MouseButton.PRIMARY);
     }
-
-    public void initPhysics() {
-
-    }
 }
