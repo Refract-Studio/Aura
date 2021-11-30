@@ -29,9 +29,4 @@ public class EntityBerry {
             spriteToUse = redSprite;
         }
     }
-
-    // draws
-    public void draw() {
-        // todo implement method
-    }
 }

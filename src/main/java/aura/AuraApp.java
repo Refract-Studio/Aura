@@ -2,6 +2,7 @@ package aura;
 
 import aura.entity.Entity;
 import aura.entity.Player;
+import aura.level.LevelLoader;
 import aura.ui.UIDrawable;
 import aura.ui.UIUtils;
 import com.almasb.fxgl.app.GameApplication;
@@ -28,6 +29,11 @@ public class AuraApp extends GameApplication {
     com.almasb.fxgl.entity.Entity player1 = player;
     static int x = 1920/2;
     static int y = 1080/2;
+    public static final LevelLoader loader = new LevelLoader();
+
+    public static LevelLoader getLevelLoader() {
+        return loader;
+    }
 
 
     protected void initEntities() {

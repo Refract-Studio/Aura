@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="Added" />
+    <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="Added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +133,7 @@
       <workItem from="1636346835647" duration="2697000" />
       <workItem from="1636437138099" duration="273000" />
       <workItem from="1636494069527" duration="9271000" />
-      <workItem from="1638236750613" duration="1723000" />
+      <workItem from="1638236750613" duration="2029000" />
     </task>
     <task id="LOCAL-00001" summary="Adding textures; minor code cleaning. Watch out if fxgl-entity acts up in the future, feel free to remove.">
       <created>1635895442208</created>

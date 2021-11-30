@@ -1,6 +1,8 @@
 package aura.entity;
 
 import aura.AuraApp;
+import aura.level.LevelClass;
+import aura.level.LevelLoader;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
@@ -27,13 +29,15 @@ public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity
     // entity that it is colliding with
     private ArrayList<com.almasb.fxgl.entity.Entity> collidingWith; // We need a list of entities if multiple entities are collided
     // x, y position
-    private float x, y;
+    public static float x, y;
     // blueberries
     private int blueberries;
     // strawberries
     private int strawberries;
     // controls physics
     private Runnable physics;
+    // seconds in bubble
+    public int ticksInBubble;
 
 
 
@@ -63,6 +67,9 @@ public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity
         if (stamina < 15000000) {
             isClimbing = false;
             gravitationalPossibility = true;
+        }
+        if (isColliding(AuraApp.getLevelLoader().newCloudR(null)) || isColliding(AuraApp.getLevelLoader().newCloudL(null)) || isColliding(AuraApp.getLevelLoader().newCloudU(null)) || isColliding(AuraApp.getLevelLoader().newCloudD(null))) {
+            ticksInBubble++;
         }
         entityBuilder().at(x, y).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
     }
