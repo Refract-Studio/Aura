@@ -83,8 +83,6 @@ public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity
         this.strawberries = strawberries;
     }
 
-    pu
-
     // initialises input
     public void initKeypress() {
         // get input
