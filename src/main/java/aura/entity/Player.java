@@ -11,7 +11,7 @@ import javafx.scene.shape.Rectangle;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 import java.util.ArrayList;
 
-public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
+public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity.Entity {
     // speed of movement
     private int moveSpeed;
     // is colliding
@@ -22,7 +22,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
     //public float motionX;
     //public float motionY;
     // entity that it is colliding with
-    private ArrayList<Entity> collidingWith; // We need a list of entities if multiple entities are collided
+    private ArrayList<com.almasb.fxgl.entity.Entity> collidingWith; // We need a list of entities if multiple entities are collided
     // x, y position
     private float x, y;
     // blueberries
@@ -38,7 +38,7 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
         this.moveSpeed = 5;
         this.isColliding = false;
         this.stamina = 9;
-        this.collidingWith = new ArrayList<Entity>();
+        this.collidingWith = new ArrayList<com.almasb.fxgl.entity.Entity>();
         this.x = 1920/2;
         this.y = 1080/2;
         this.blueberries = 0;
@@ -93,9 +93,5 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
                 y = (float) input.getMouseYUI();
             }
         }, MouseButton.PRIMARY);
-    }
-
-    public void initPhysics() {
-
     }
 }

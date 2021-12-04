@@ -1,0 +1,5 @@
+//I can try to make a level parser it is not that hard!
+LEVEL ID:1
+LEVEL NAME:Discovery
+BACKGROUND IMAGE:discovery.png
+//Still working on how to add blocks in locations but I will try JSON for now just basics.
