@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="dont ask">
-      <change afterPath="$PROJECT_DIR$/src/main/java/aura/level/LevelClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aura/level/LevelLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aura/level/LevelManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aura/level/TSXLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/AuraApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/AuraApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="Added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +39,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
@@ -60,6 +58,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="discord-application" />
   </component>
   <component name="RecentsManager">
@@ -131,6 +130,7 @@
       <workItem from="1636346835647" duration="2697000" />
       <workItem from="1636437138099" duration="273000" />
       <workItem from="1636494069527" duration="9271000" />
+      <workItem from="1638236750613" duration="1723000" />
     </task>
     <task id="LOCAL-00001" summary="Adding textures; minor code cleaning. Watch out if fxgl-entity acts up in the future, feel free to remove.">
       <created>1635895442208</created>

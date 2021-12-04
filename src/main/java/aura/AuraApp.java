@@ -4,13 +4,9 @@ import aura.entity.Entity;
 import aura.entity.Player;
 import aura.ui.UIDrawable;
 import aura.ui.UIUtils;
-import aura.level.LevelUtils;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.dsl.FXGL;
-import javafx.geometry.Point2D;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -28,7 +24,7 @@ public class AuraApp extends GameApplication {
     // LevelUtils.loadLevel(player.currentLevel);
     // make UI
     ArrayList<Entity> entities = new ArrayList<Entity>();
-    Player player = new Player();
+    public static Player player = new Player();
     com.almasb.fxgl.entity.Entity player1 = player;
     static int x = 1920/2;
     static int y = 1080/2;
@@ -45,10 +41,10 @@ public class AuraApp extends GameApplication {
 
     @Override
     protected void onUpdate(double tpf) {
-        hookRunnable.run(); //Cannot execute it as a thread to prevent concurrent modification!
+        hookRunnable.run(); // Cannot execute it as a thread to prevent concurrent modification!
     }
 
-    public static int getPlayerX() {
+    public static double getPlayerX() {
         return x;
     }
 
@@ -56,7 +52,7 @@ public class AuraApp extends GameApplication {
         x = toChange;
     }
 
-    public int getPlayerY() {
+    public static double getPlayerY() {
         return y;
     }
 
@@ -77,6 +73,7 @@ public class AuraApp extends GameApplication {
         com.almasb.fxgl.entity.Entity e = FXGL.entityBuilder().at(0, 0).view(FXGL.getAssetLoader().loadTexture("COMPONENT_WALLPAPER.jpg", 1920, 1080)).buildAndAttach();
         UIUtils.drawUIComponent(650, 200, UIDrawable.COMPONENT_PLAY);
         UIUtils.drawUIComponent(650, 0, UIDrawable.COMPONENT_TITLE);
+        UIUtils.drawUIComponent(650, 400, UIDrawable.COMPONENT_EXIT);
     }
 
     @Override

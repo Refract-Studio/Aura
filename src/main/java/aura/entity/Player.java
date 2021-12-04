@@ -7,7 +7,6 @@ import com.almasb.fxgl.input.UserAction;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.shape.Rectangle;
-
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 import java.util.ArrayList;
 
@@ -16,6 +15,10 @@ public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity
     private int moveSpeed;
     // is colliding
     private boolean isColliding;
+    // is in air or can go down
+    private boolean gravitationalPossibility;
+    // is climbing
+    private boolean isClimbing;
     // stamina for climbing
     private int stamina;
     // motion{x, y}, @author SethTheDev
@@ -41,16 +44,43 @@ public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity
         this.collidingWith = new ArrayList<com.almasb.fxgl.entity.Entity>();
         this.x = 1920/2;
         this.y = 1080/2;
+        this.gravitationalPossibility = false;
         this.blueberries = 0;
         this.strawberries = 0;
+        this.isClimbing = false;
     }
 
     @Override
     public void onUpdate() {
-        if (!isColliding) {
-
+        AuraApp.setPlayerX((int) x);
+        AuraApp.setPlayerY((int) y);
+        if (gravitationalPossibility && !isClimbing) {
+            AuraApp.setPlayerX((int) AuraApp.getPlayerX() - 1);
+        }
+        if (isClimbing) {
+            stamina--;
+        }
+        if (stamina < 15000000) {
+            isClimbing = false;
+            gravitationalPossibility = true;
         }
         entityBuilder().at(x, y).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
+    }
+
+    public void addStrawberry() {
+        strawberries++;
+    }
+
+    public void addBlueberry() {
+        blueberries++;
+    }
+
+    public void setBlueberries(int blueberries) {
+        this.blueberries = blueberries;
+    }
+
+    public void setStrawberries(int strawberries) {
+        this.strawberries = strawberries;
     }
 
     // initialises input

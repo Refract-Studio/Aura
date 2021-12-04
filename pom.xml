@@ -8,10 +8,13 @@
     <artifactId>Aura</artifactId>
     <version>dev</version>
 
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <javafx.version>13</javafx.version>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -25,5 +28,7 @@
             <version>11.17</version>
         </dependency>
     </dependencies>
+
+
 
 </project>
