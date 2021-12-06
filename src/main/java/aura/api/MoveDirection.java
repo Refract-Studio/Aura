@@ -1,4 +1,4 @@
-package aura.entity.game;
+package aura.api;
 
 public enum MoveDirection {
     Up,

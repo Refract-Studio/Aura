@@ -8,6 +8,8 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/com/github/almasb/fxgl/11.17/fxgl-11.17-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/almasb/fxgl/11.17/fxgl-11.17-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/almasb/fxgl/11.17/fxgl-11.17-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
