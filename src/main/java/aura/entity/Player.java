@@ -167,8 +167,4 @@ public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
             }, KeyCode.UP);
         }
     }
-
-    public static  void initPhysics() {
-
-    }
 }
