@@ -1,61 +1,77 @@
 package aura.entity;
 
 import aura.AuraApp;
+import aura.api.Entity;
+import aura.api.MoveDirection;
 import com.almasb.fxgl.dsl.FXGL;
+import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
+import com.almasb.fxgl.texture.AnimatedTexture;
+import com.almasb.fxgl.texture.AnimationChannel;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.shape.Rectangle;
+import org.jetbrains.annotations.Nullable;
+
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 import java.util.ArrayList;
 
-public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity.Entity {
+public class Player extends com.almasb.fxgl.entity.Entity implements Entity {
     // speed of movement
-    private int moveSpeed;
+    public static  int moveSpeed;
     // is colliding
-    private boolean isColliding;
+    public static boolean isColliding;
     // is in air or can go down
-    private boolean gravitationalPossibility;
+    public static  boolean gravitationalPossibility;
     // is climbing
-    private boolean isClimbing;
+    public static  boolean isClimbing;
     // stamina for climbing
-    private int stamina;
+    public static  int stamina;
     // motion{x, y}, @author SethTheDev
-    //public float motionX;
-    //public float motionY;
+    public static float motionX;
+    public static float motionY;
+    public static  boolean motionNeeded;
+    public static  boolean idle;
+    public static MoveDirection facing;
+    public static MoveDirection moving;
     // entity that it is colliding with
-    private ArrayList<com.almasb.fxgl.entity.Entity> collidingWith; // We need a list of entities if multiple entities are collided
+    public static ArrayList<com.almasb.fxgl.entity.Entity> collidingWith; // We need a list of entities if multiple entities are collided
     // x, y position
-    private float x, y;
+    public static float x, y;
     // blueberries
-    private int blueberries;
+    public static  int blueberries;
     // strawberries
-    private int strawberries;
+    public static  int strawberries;
     // controls physics
-    private Runnable physics;
+    public static  Runnable physics;
+    // seconds in bubble
+    public static  int ticksInBubble;
 
 
 
     public Player() {
-        this.moveSpeed = 5;
-        this.isColliding = false;
-        this.stamina = 9;
-        this.collidingWith = new ArrayList<com.almasb.fxgl.entity.Entity>();
-        this.x = 1920/2;
-        this.y = 1080/2;
-        this.gravitationalPossibility = false;
-        this.blueberries = 0;
-        this.strawberries = 0;
+        moveSpeed = 5;
+        isColliding = false;
+        stamina = 9;
+        collidingWith = new ArrayList<com.almasb.fxgl.entity.Entity>();
+        x = 1920/2;
+        y = 1080/2;
+        gravitationalPossibility = false;
+        blueberries = 0;
+        strawberries = 0;
         this.isClimbing = false;
+        this.idle = false;
+        this.motionX = 0;
+        this.motionY = 0;
     }
 
     @Override
     public void onUpdate() {
-        AuraApp.setPlayerX((int) x);
-        AuraApp.setPlayerY((int) y);
+        y += motionY;
+        x += motionX;
         if (gravitationalPossibility && !isClimbing) {
-            AuraApp.setPlayerX((int) AuraApp.getPlayerX() - 1);
+            y--;
         }
         if (isClimbing) {
             stamina--;
@@ -64,64 +80,91 @@ public class Player extends com.almasb.fxgl.entity.Entity implements aura.entity
             isClimbing = false;
             gravitationalPossibility = true;
         }
-        entityBuilder().at(x, y).viewWithBBox(new Rectangle(20, 20)).buildAndAttach();
+        SpawnData data = new SpawnData();
+        if (isColliding(AuraApp.getLevelLoader().newBubble(data))) {
+            ticksInBubble++;
+        }
     }
 
-    public void addStrawberry() {
+    public static  void addStrawberry() {
         strawberries++;
     }
 
-    public void addBlueberry() {
+    public static  void addBlueberry() {
         blueberries++;
     }
 
-    public void setBlueberries(int blueberries) {
-        this.blueberries = blueberries;
+    public static  void setBlueberries(int blueberries) {
+        Player.blueberries = blueberries;
     }
 
-    public void setStrawberries(int strawberries) {
-        this.strawberries = strawberries;
+    public static  void setStrawberries(int strawberries) {
+        Player.strawberries = strawberries;
     }
 
     // initialises input
-    public void initKeypress() {
+    public static  void initKeypress() {
         // get input
         Input input = FXGL.getInput();
 
         input.addAction(new UserAction("Forward") {
             @Override
             protected void onAction() {
-                x += moveSpeed;
+                motionX += moveSpeed;
+                moving = MoveDirection.Right;
+                isClimbing = false;
             }
-        }, KeyCode.D);
+        }, KeyCode.RIGHT);
 
         input.addAction(new UserAction("Backward") {
             @Override
             protected void onAction() {
-                x -= moveSpeed;
+                motionX -= moveSpeed;
+                moving = MoveDirection.Left;
+                isClimbing = false;
             }
-        }, KeyCode.A);
-
-        input.addAction(new UserAction("Up") {
-            @Override
-            protected void onAction() {
-                y -= moveSpeed;
-            }
-        }, KeyCode.W);
+        }, KeyCode.LEFT);
 
         input.addAction(new UserAction("Down") {
             @Override
             protected void onAction() {
-                y += moveSpeed;
+                motionY += moveSpeed;
+                moving = MoveDirection.Down;
+                isClimbing = false;
             }
-        }, KeyCode.S);
+        }, KeyCode.DOWN);
 
-        input.addAction(new UserAction("Click") {
+
+        input.addAction(new UserAction("Dash") {
             @Override
             protected void onAction() {
-                x = (float) input.getMouseXUI();
-                y = (float) input.getMouseYUI();
+                motionX += moveSpeed * 2.0;
+                isClimbing = false;
             }
-        }, MouseButton.PRIMARY);
+        }, KeyCode.X);
+
+        input.addAction(new UserAction("Jump") {
+            @Override
+            protected void onAction() {
+                motionY += 20;
+            }
+        }, KeyCode.C);
+
+        input.addAction(new UserAction("Climb") {
+            @Override
+            protected void onAction() {
+                super.onAction();
+                isClimbing = true;
+            }
+        }, KeyCode.Z);
+
+        if (isClimbing) {
+            input.addAction(new UserAction("Up") {
+                @Override
+                protected void onAction() {
+                    motionY += 2;
+                }
+            }, KeyCode.UP);
+        }
     }
 }

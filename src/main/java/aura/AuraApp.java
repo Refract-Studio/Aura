@@ -1,19 +1,19 @@
 package aura;
 
-import aura.entity.Entity;
+import aura.api.Entity;
 import aura.entity.Player;
+import aura.level.LevelLoader;
 import aura.ui.UIDrawable;
 import aura.ui.UIUtils;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.dsl.FXGL;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-
-import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class AuraApp extends GameApplication {
     //test
@@ -27,7 +27,12 @@ public class AuraApp extends GameApplication {
     public static Player player = new Player();
     com.almasb.fxgl.entity.Entity player1 = player;
     static int x = 1920/2;
-    static int y = 1080/2;
+    static int y = 1072/2;
+    public static final LevelLoader loader = new LevelLoader();
+
+    public static LevelLoader getLevelLoader() {
+        return loader;
+    }
 
 
     protected void initEntities() {
@@ -36,6 +41,8 @@ public class AuraApp extends GameApplication {
 
     public AuraApp() {
         initEntities();
+        FXGL.getGameWorld().addEntityFactory(new LevelLoader());
+        FXGL.setLevelFromMap("Ruby - 111aaa.tmx");
         //executor.scheduleAtFixedRate(hookRunnable, 0, 20, TimeUnit.MILLISECONDS); ONUPDATE is being used!
     }
 
@@ -59,11 +66,12 @@ public class AuraApp extends GameApplication {
     public static void setPlayerY(int toChange) {
         y = toChange;
     }
+
     @Override
     protected void initSettings(GameSettings settings) {
         // launches GUI for game and adds width, height and title
         settings.setWidth(1920);
-        settings.setHeight(1080);
+        settings.setHeight(1088);
         settings.setTitle("Aura");
         settings.setVersion("");
     }

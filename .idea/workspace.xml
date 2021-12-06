@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="Added" />
+    <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="Added">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aura/component/PlayerAnimationHandlerComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aura/entity/CollisionReflector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/idle-left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/idle-right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/jumping-left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/jumping-right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/move-left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/move-right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_11_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_11_17.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aura.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/AuraApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/AuraApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/BerryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/BerryType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/EntityTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/EntityTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/MoveDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/MoveDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aura/level/LevelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/level/LevelLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logs/FXGL-08-Nov-2021-19.03.26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logs/FXGL-08-Nov-2021-20.16.31.log" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +49,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="change/level" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -45,6 +78,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
@@ -70,6 +104,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/assets/textures" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/textures" />
       <recent name="$PROJECT_DIR$/Aura" />
       <recent name="$PROJECT_DIR$" />
@@ -92,7 +127,7 @@
       <module name="Aura" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="aura.entity.*" />
+          <option name="PATTERN" value="aura.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,7 +165,9 @@
       <workItem from="1636346835647" duration="2697000" />
       <workItem from="1636437138099" duration="273000" />
       <workItem from="1636494069527" duration="9271000" />
-      <workItem from="1638236750613" duration="1723000" />
+      <workItem from="1638236750613" duration="2029000" />
+      <workItem from="1638406850859" duration="1204000" />
+      <workItem from="1638737485218" duration="10994000" />
     </task>
     <task id="LOCAL-00001" summary="Adding textures; minor code cleaning. Watch out if fxgl-entity acts up in the future, feel free to remove.">
       <created>1635895442208</created>
@@ -223,5 +260,15 @@
     <MESSAGE value="Made home screen. Still need to add Lily's icons, but after that map design can officially begin (after physics :P)" />
     <MESSAGE value="dont ask" />
     <option name="LAST_COMMIT_MESSAGE" value="dont ask" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
