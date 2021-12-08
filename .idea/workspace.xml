@@ -5,33 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="209bd2bd-1173-4243-ac54-dd330e221592" name="Changes" comment="Added">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aura/component/PlayerAnimationHandlerComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aura/entity/CollisionReflector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/idle-left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/idle-right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/jumping-left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/jumping-right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/move-left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/move-right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_11_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_11_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_16.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Aura.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/AuraApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/AuraApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/BerryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/BerryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/EntityTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/EntityTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/api/MoveDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/api/MoveDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aura/level/LevelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aura/level/LevelLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logs/FXGL-08-Nov-2021-19.03.26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logs/FXGL-08-Nov-2021-20.16.31.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/AuraApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/AuraApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/entity/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/entity/Player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/entity/Player$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/entity/Player$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/entity/Player$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/entity/Player$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/entity/Player$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/entity/Player$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/entity/Player$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/entity/Player$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/entity/Player$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/entity/Player$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aura/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aura/entity/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +51,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="20CUBDSm2DTnhvvRX7ZDl73hJKI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
